@@ -1,22 +1,18 @@
-def digit_sum(n):
-    """Returns the sum of the digits of a number."""
-    return sum(int(digit) for digit in str(n))
+LIMIT = 100
 
-# Taking user input for maximum base and exponent
-max_base = int(input("Enter the maximum base: "))
-max_exponent = int(input("Enter the maximum exponent: "))
+def digit_sum(num):
+    s_num = str(num)
+    sum = 0
+    for l in s_num :
+        sum += int(l)
+    return sum
 
-max_sum = 1
+max_digit_sum = 0
+for a in range(0, LIMIT+1):
+    for b in range(0, LIMIT+1):
+        sum = digit_sum(a**b)
+        if sum > max_digit_sum :
+            max_digit_sum = sum
+            # print (sum)
 
-# Iterate through all values of a^b where a, b < user input
-for base in range(1, max_base):
-    power = 1  # Initial value (base^0)
-    for exponent in range(1, max_exponent):
-        power *= base  # Calculate base^exponent
-        current_sum = digit_sum(power)  # Compute digit sum
-        
-        # Update max_sum if current_sum is larger
-        if current_sum > max_sum:
-            max_sum = current_sum
-
-print("Maximum digital sum:", max_sum)
+print(str(max_digit_sum))
