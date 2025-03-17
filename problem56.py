@@ -8,8 +8,8 @@ def digit_sum(num):
     return sum
 
 max_digit_sum = 0
-for a in range(0, LIMIT+1):
-    for b in range(0, LIMIT+1):
+for a in range(1, LIMIT):
+    for b in range(1, LIMIT):
         sum = digit_sum(a**b)
         if sum > max_digit_sum :
             max_digit_sum = sum
