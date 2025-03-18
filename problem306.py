@@ -51,7 +51,6 @@ for i in range(500, 500 + 34):
 N = 1000000
  
 border = (N - (N % 34))
- 
 count += (border - 340)//34*count34
  
 for i in range(border, N + 1):
